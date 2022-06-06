@@ -1,0 +1,51 @@
+---
+  alarms_log1:
+    match: '(SELECT 1 FROM (select count(*),concat(floor(rand(0)*2),(SELECT 0x7e247765627363616e247e))a from information_schema.tables group by a)b)'
+  datagram1:
+    protocol: 'http://'
+    method: post
+    path: '/robots.txt'
+    body: 'xxxxxx'
+    header:
+      host: 10.20.192.54
+      Referer: "http://webscan.360.cn',(SELECT 1 FROM (select count(*),concat(floor(rand(0)*2),(SELECT 0x7e247765627363616e247e))a from information_schema.tables group by a)b),'"
+      User-Agent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:99.0) Gecko/20100101 Firefox/99.0'
+      Accept: '*/*'
+    rps_code: 403
+    
+  alarms_log2:
+    match: 'setTimeout'
+  datagram2:
+    protocol: 'http://'
+    method: post
+    path: '/login.jsp'
+    body: "xx='-setTimeout`pro'%2b'mpt(doc'%2b'ument.do'%2b'main)`-'"
+    header:
+      Host: oa.dgcb.com.cn:8088
+      Accept-Encoding: gzip, deflate
+      Accept: '*/*'
+      Accept-Language: en
+      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36
+      Connection: close
+      Content-Type: application/x-www-form-urlencoded
+    rps_code: 403
+    
+  alarms_log3:
+    match: '1 and 1=1'
+  datagram3:
+    protocol: 'http://'
+    method: get
+    path: '/?id=1%20and%201=1'
+    header:
+      Host: oa.dgcb.com.cn:8088
+    rps_code: 403
+
+  alarms_log4:
+    match: '.mdb'
+  datagram4:
+    protocol: 'http://'
+    method: get
+    path: '/b.mdb'
+    header:
+      Host: oa.dgcb.com.cn:8088
+    rps_code: 403

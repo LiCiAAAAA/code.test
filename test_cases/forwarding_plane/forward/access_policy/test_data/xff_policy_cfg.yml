@@ -1,0 +1,22 @@
+---
+  src_ip_parse1:
+    analysis_method: "从请求头字段获取"
+    trusted_ip: "10.20.88.149/32"
+
+  src_ip_parse2:
+    analysis_method: "从请求头字段获取"
+    trusted_ip: "10.20.88.49/32"
+
+  attack_cfg:
+    protocol: 'http://'
+    method: get
+    path: '/a.mdb'
+    header:
+      X-Forwarded-For: '114.104.139.79'
+      Accept: '*/*'
+    rsp_code: 403
+  
+  alarms_log1:
+    src_ip: "10.20.88.49"
+  alarms_log2:
+    src_ip: "114.104.139.79"

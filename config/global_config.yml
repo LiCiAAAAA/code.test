@@ -1,0 +1,14 @@
+---
+  login_config:
+    ip: 10.20.192.54
+    login_url: https://10.20.192.54/user.m?a=login
+    user: admin
+    pwd: adminadmin
+    ssh_user: root
+    ssh_pwd: waftest
+    port: 443
+    timeout: 120
+
+  reserved_cfg:
+    ssh_url: https://10.20.192.54/system.m?a=reserved
+    dev_kye: '!@#dbapp-waf-dev-reserved#@!'

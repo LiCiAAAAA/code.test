@@ -1,0 +1,48 @@
+---
+  site_config:
+    site_name: 10.20.192.51:80
+    site_ip: 10.20.192.51
+    site_port: 80
+    linkage_protect: Protect1
+
+  reverse_site_cfg:
+    site_name: 10.20.192.51:80
+    site_ip: 10.20.192.51
+    site_port: 80
+    frontend_port: 80
+    frontend_interface: eth2
+    backend_interface: eth2
+    frontend_ip: 10.20.192.59
+    backend_ip: 10.20.192.59
+    netmask: 255.255.255.0
+    frontend_gateway: 10.20.192.1
+
+  https_site_config:
+    https_status: 启用
+    site_port: 443
+
+  req_params:
+    url: &url http://10.20.192.51/wp-login.php
+
+  https_req_params:
+    url: &https_url https://10.20.192.51/wp-login.php
+
+  https_attack_params:
+    url: https://10.20.192.51/wp-login.mdb
+    expected_status: '403'
+    verify: False
+
+  http_attack_params:
+    url: http://10.20.192.51/wp-login.mdb
+    expected_status: '403'
+
+  success_req:
+    url: *url
+    expected_status: '200'
+
+  block_params:
+    url: *url
+    expected_status: '403'
+
+  strategy_cfg:
+    rules_group_enable: 启用

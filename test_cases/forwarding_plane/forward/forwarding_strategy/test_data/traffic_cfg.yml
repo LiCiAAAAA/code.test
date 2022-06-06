@@ -1,0 +1,6 @@
+---
+  tcp_cfg:
+    cmd: "sysctl -a |grep 'tcp_tw_recycle = 1'"
+    check_value: "tcp_tw_recycle = 1"
+    judg: not in
+    tw_recycle: "1"

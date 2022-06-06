@@ -1,0 +1,10 @@
+---
+  net_cfg:
+    brif1: eth2
+    brif2: eth3
+    inteface_type: 网桥
+
+  net_check_var:
+    judg1: in
+    judg2: not in
+    check_value: Protect1

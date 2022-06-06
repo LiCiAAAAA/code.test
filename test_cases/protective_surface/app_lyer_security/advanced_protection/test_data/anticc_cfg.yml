@@ -1,0 +1,7 @@
+---
+  anticc_cfg:
+    ip_check: IP
+    ip_method: 常规
+    detect_cycle: 10
+    access_threshold: 1
+    title: test_speed

