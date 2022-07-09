@@ -50,5 +50,3 @@ class WafConfigGlobalKeywords(WafWebDriver):
         global_deploy = kwagrs.get('global_deploy')
         self.operate_element(self.__elements['global_deploy'], global_deploy)
         self.operate_element(self.__elements['deploy_save'], global_deploy)
-
-    
